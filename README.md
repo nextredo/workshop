@@ -16,4 +16,8 @@
   - Additional licenses can be found in [`extra/`](./extra/)
 
 ### Addendums
-- The license present in [`LICENCE`](./LICENSE) applies to this entire repository, excluding subdirectories which contain their own license file (either directly, or via shortcut). In such cases, the license file in the subdirectory takes precedence.
+#### Subdirectories
+The license present in [`LICENCE`](./LICENSE) applies to this entire repository, excluding subdirectories which contain their own license file (either directly, or via shortcut). In such cases, the license file in the subdirectory takes precedence.
+
+#### Additional License Files
+Licenses in [`./extra/`](./extra/) do not apply to anything, unless referred to by [`LICENSE`](./LICENSE)
