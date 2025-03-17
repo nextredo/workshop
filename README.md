@@ -12,6 +12,10 @@
 - Named with puns, that's about all there is to say
 
 ## Licensing 🔏📄
+- The stuff in the repo probably isn't super helpful.
+- That's why the license is permissive, not copyleft.
+- Makes it easier for anyone, should something in here be slightly useful.
+- Things will probably be moved into their own projects with well-considered licensing if they get interesting enough.
 - See [`LICENCE`](./LICENSE)
   - Additional licenses can be found in [`extra/`](./extra/)
 
