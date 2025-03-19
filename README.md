@@ -15,7 +15,8 @@
 - The stuff in the repo probably isn't super helpful.
 - That's why the license is permissive, not copyleft.
 - Makes it easier for anyone, should something in here be slightly useful.
-- Things will probably be moved into their own projects with well-considered licensing if they get interesting enough.
+- Things will likely be moved into their own projects if they get interesting enough.
+  - So they might get a new license, or inspire something with a different license.
 - See [`LICENCE`](./LICENSE)
   - Additional licenses can be found in [`extra/`](./extra/)
 
