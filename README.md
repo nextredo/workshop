@@ -24,5 +24,14 @@
 #### Subdirectories
 The license present in [`LICENCE`](./LICENSE) applies to this entire repository, excluding subdirectories which contain their own license file (either directly, or via shortcut). In such cases, the license file in the subdirectory takes precedence.
 
+#### StackOverflow, CC-BY-SA 4.0 and GPLv3 Compatibility
+- At the time of writing, [*user contributions on StackOverflow are licensed as CC-BY-SA 4.0*][so-licensing].
+- Also at the time of writing, [*CC-BY-SA 4.0 is one-way compatible with GPLv3*][cc-by-sa-and-gplv3].
+- [CC-BY-SA 4.0 Canonical URL](https://creativecommons.org/licenses/by-sa/4.0/)
+
 #### Additional License Files
 Licenses in [`./extra/`](./extra/) do not apply to anything, unless referred to by [`LICENSE`](./LICENSE)
+
+<!-- Links -->
+[cc-by-sa-and-gplv3]: https://creativecommons.org/2015/10/08/cc-by-sa-4-0-now-one-way-compatible-with-gplv3/
+[so-licensing]: https://stackoverflow.com/help/licensing
