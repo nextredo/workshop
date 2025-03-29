@@ -3,5 +3,5 @@
 ## Standard Compilation Command
 
 ```bash
-gcc --std=c17 -Wall -Wextra -pedantic errno_testin.c -o eno.bin
+gcc --std=c17 -Wall -Wextra -pedantic <FILE>
 ```
