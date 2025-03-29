@@ -5,6 +5,7 @@
 
 // Suppress specific clang-tidy warnings
 // NOLINTBEGIN(readability-*, cppcoreguidelines-*, hicpp-*)
+// https://clang.llvm.org/extra/clang-tidy/
 
 int main()
 {
