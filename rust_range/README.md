@@ -7,7 +7,7 @@
 See <https://doc.rust-lang.org/book/>
 
 #### In This Repo
-Open [`./book/README.md`](./book/README.md)
+Open [`./submodules/book/README.md`](./submodules/book/README.md)
 
 #### Through `rustup`
 ```bash
@@ -22,7 +22,7 @@ rustup doc --book
 See <https://github.com/rust-lang/rustlings/>
 
 #### In This Repo
-Open [`./rustlings/README.md`](./rustlings/README.md)
+Open [`./submodules/rustlings/README.md`](./submodules/rustlings/README.md)
 
 ### Notes
 
