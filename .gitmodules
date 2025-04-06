@@ -2,3 +2,11 @@
 	path = cpp_chamber/doctesting/doctest
 	url = https://github.com/doctest/doctest.git
 	branch = master
+[submodule "rust_range/book"]
+	path = rust_range/book
+	url = https://github.com/rust-lang/book.git
+	branch = main
+[submodule "rust_range/rustlings"]
+	path = rust_range/rustlings
+	url = https://github.com/rust-lang/rustlings.git
+	branch = main
