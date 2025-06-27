@@ -1,5 +1,7 @@
 extends Area2D
 
+signal hit
+
 # Player move speed (pixels/sec)
 @export var speed = 400
 
@@ -50,3 +52,18 @@ func _process(delta: float) -> void:
 	elif velocity.y != 0:
 		$AnimatedSprite2D.animation = "up"
 		$AnimatedSprite2D.flip_v    = (velocity.y > 0)
+
+
+func _on_body_entered(_body: Node2D) -> void:
+	hide()
+	hit.emit()
+
+	# Must be deferred, as we shouldn't change physics properties
+	# in a physics callback
+	$CollisionShape2D.set_deferred("disabled", true)
+
+
+func start(pos: Vector2) -> void:
+	position = pos
+	show()
+	$CollisionShape2D.disabled = false
