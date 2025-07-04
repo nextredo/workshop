@@ -10,6 +10,15 @@ config_version=5
 
 [application]
 
-config/name="First 3D Game"
-config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/name="Squash the Creeps (3D)"
+config/description="In this game, your goal is to chase and kick out the creeps!"
+config/features=PackedStringArray("4.2")
+config/icon="res://icon.webp"
+
+[filesystem]
+
+import/blender/enabled=false
+
+[rendering]
+
+anti_aliasing/quality/msaa_3d=2
