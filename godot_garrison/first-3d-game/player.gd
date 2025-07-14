@@ -43,4 +43,3 @@ func _physics_process(delta):
 	# Move the character
 	velocity = target_velocity
 	move_and_slide()
-
