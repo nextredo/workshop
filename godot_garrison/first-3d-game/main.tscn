@@ -1,6 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhti0nov75in3"]
+[gd_scene load_steps=9 format=3 uid="uid://bhti0nov75in3"]
 
+[ext_resource type="Script" uid="uid://dnumeesmn3ic4" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c2l1jtparf5ul" path="res://player.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bt2gs1pv0noqn" path="res://mob.tscn" id="2_h2yge"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7dm0k"]
 size = Vector3(60, 2, 60)
@@ -15,8 +17,16 @@ albedo_color = Color(1, 0.622314, 0.136719, 1)
 material = SubResource("StandardMaterial3D_ig7tw")
 
 [sub_resource type="Curve3D" id="Curve3D_0xm2m"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -19.9247, 0, -14.1489, 0, 0, 0, 0, 0, 0, 20.0038, 0, -14.1508, 0, 0, 0, 0, 0, 0, 20.0476, 0, 14.9382, 0, 0, 0, 0, 0, 0, -19.9922, 0, 14.951),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
 
 [node name="Main" type="Node"]
+script = ExtResource("1_0xm2m")
+mob_scene = ExtResource("2_h2yge")
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
@@ -43,7 +53,6 @@ projection = 1
 size = 19.0
 
 [node name="Cylinders" type="Node3D" parent="."]
-visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Cylinders"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -14)
@@ -61,5 +70,14 @@ mesh = SubResource("CylinderMesh_ig7tw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 15)
 mesh = SubResource("CylinderMesh_ig7tw")
 
-[node name="Path3D" type="Path3D" parent="."]
+[node name="SpawnPath" type="Path3D" parent="."]
 curve = SubResource("Curve3D_0xm2m")
+
+[node name="SpawnLocation" type="PathFollow3D" parent="SpawnPath"]
+transform = Transform3D(4.77592e-05, 0, -1, 0, 1, 0, 1, 0, 4.77592e-05, -19.9247, 0, -14.1489)
+
+[node name="MobTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="MobTimer" to="." method="_on_mob_timer_timeout"]
