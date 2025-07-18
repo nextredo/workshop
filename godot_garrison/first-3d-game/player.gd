@@ -9,7 +9,7 @@ extends CharacterBody3D
 var target_velocity := Vector3.ZERO
 
 
-func _physics_process(delta):
+func _physics_process(delta) -> void:
 	# We create a local variable to store the input direction.
 	var direction = Vector3.ZERO
 
