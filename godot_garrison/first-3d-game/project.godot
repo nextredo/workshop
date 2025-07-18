@@ -15,6 +15,11 @@ config/description="In this game, your goal is to chase and kick out the creeps!
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.webp"
 
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=540
+
 [filesystem]
 
 import/blender/enabled=false
