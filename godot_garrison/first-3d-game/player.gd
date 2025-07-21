@@ -1,14 +1,16 @@
 extends CharacterBody3D
 
 # Player speed [m/s]
-@export var speed = 14
+@export var speed := 14
 
 # Player falling acceleration [m/(s^2)]
-@export var fall_acceleration = 75
+@export var fall_acceleration := 75
 
 # Vertical impulse applied to character upon jumping [m/s]
-@export var jump_impulse = 20
+@export var jump_impulse := 20
 
+# Vertical impulse applied to character upon bouncing over a mob [m/s]
+@export var bounce_impulse := 16
 
 var target_velocity := Vector3.ZERO
 
@@ -51,4 +53,31 @@ func _physics_process(delta) -> void:
 	if (is_on_floor() and Input.is_action_pressed("jump")):
 		target_velocity.y = jump_impulse
 
+	# Run collision physics
 	move_and_slide()
+
+	# Check to see if we've jumped on a mob
+	for index in range(get_slide_collision_count()):
+		# Get one of the collisions with us (the player)
+		var collision := get_slide_collision(index)
+
+		# If we collide more than once with a mob in a single frame,
+		# the mob will be deleted by the first collision.
+		# Subsequent calls to get_collider will return null.
+		# This will lead to a null pointer when calling
+		# collision.get_collider().is_in_group("mob")
+		if collision.get_collider() == null:
+			continue
+
+		# If collider is with a mob
+		if collision.get_collider().is_in_group("mob"):
+			var mob := collision.get_collider()
+
+			# Check we're (roughly) hitting it from above
+			if Vector3.UP.dot(collision.get_normal()) > 0.1:
+				# Squash & bounce if so
+				mob.squash()
+				target_velocity.y = bounce_impulse
+
+				# Prevent duplicate calls
+				break
