@@ -15,6 +15,7 @@ signal hit
 # Vertical impulse applied to character upon bouncing over a mob [m/s]
 @export var bounce_impulse := 16
 
+
 var target_velocity := Vector3.ZERO
 
 
@@ -84,6 +85,7 @@ func _physics_process(delta) -> void:
 
 				# Prevent duplicate calls
 				break
+
 
 # Kill player
 func die() -> void:

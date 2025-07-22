@@ -10,10 +10,11 @@ signal squashed
 @export var max_speed = 18
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 
+# Should be called from main scene
 func initialise(start_pos: Vector3, player_pos: Vector3) -> void:
 	# Position mob and rotate it towards player
 	look_at_from_position(start_pos, player_pos, Vector3.UP)
