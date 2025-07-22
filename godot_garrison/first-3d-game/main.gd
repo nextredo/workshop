@@ -28,3 +28,7 @@ func _on_mob_timer_timeout() -> void:
 
 	# Add mob as child of this node
 	add_child(mob)
+
+
+func _on_player_hit() -> void:
+	$MobTimer.stop()
