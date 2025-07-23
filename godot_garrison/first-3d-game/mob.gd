@@ -33,7 +33,7 @@ func initialise(start_pos: Vector3, player_pos: Vector3) -> void:
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
 
-func squash():
+func squash() -> void:
 	squashed.emit()
 	queue_free()
 
