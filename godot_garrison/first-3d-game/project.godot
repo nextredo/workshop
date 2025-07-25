@@ -16,6 +16,10 @@ run/main_scene="uid://bhti0nov75in3"
 config/features=PackedStringArray("4.4")
 config/icon="res://icon.webp"
 
+[autoload]
+
+MusicPlayer="*res://music_player.tscn"
+
 [display]
 
 window/size/viewport_width=720
