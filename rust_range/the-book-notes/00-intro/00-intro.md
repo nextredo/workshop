@@ -12,8 +12,8 @@
 ### Who's Rust For?
 #### Dev Teams
 - compiler is a gatekeeper, doesn't compile w/ bugs
-- `Cargo` brings dependency management to the systems programming world
-- `Rustfmt` brings a consistent style across devs
+- `cargo` brings dependency management to the systems programming world
+- `rustfmt` brings a consistent style across devs
 - `rust-analyzer` juices up IDEs
 - `clippy` is the linting tool
 
