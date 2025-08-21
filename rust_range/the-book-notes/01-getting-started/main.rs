@@ -2,7 +2,8 @@
 fn main() {
     // `{}` required around all function bodies
         // opening `{` on same line as func declaration
-            // doesn't follow the [K&R C/C++ Style](K&R-style)
+            // doesn't follow the K&R C/C++ Style
+            // https://en.wikipedia.org/wiki/Indentation_style#K&R
         // format w/ `rustfmt`
 
     // macro (as indicated by `!`)
