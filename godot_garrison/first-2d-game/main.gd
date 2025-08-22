@@ -5,7 +5,7 @@ extends Node
 var score: int
 
 func _ready() -> void:
-	$Player.start($StartPosition.position)
+	$Player.hide()
 
 
 func game_over() -> void:
@@ -19,6 +19,7 @@ func game_over() -> void:
 func new_game() -> void:
 	score = 0
 	$Player.start($StartPosition.position)
+	$Player.show()
 	$StartTimer.start()
 	$HUD.update_score(score)
 	$HUD.show_message("Get Ready")
