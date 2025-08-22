@@ -76,7 +76,6 @@ cargo check
 
 #### Convention
 - Better than `rustc` for multi-file projects, dependencies
--
 
 <!-- Links -->
 [toml]: https://toml.io/
