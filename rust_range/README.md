@@ -33,7 +33,11 @@ Open [`./submodules/rustlings/README.md`](./submodules/rustlings/README.md)
   - The Reference
   - The Rustonomicon (unsafe)
   - Unstable book (nightly features)
+- [Rust By Example][by-example]
 - [Swag][rustaceans]
+- [Community][community-page]
 
 [learn-rust]: https://www.rust-lang.org/learn
 [rustaceans]: https://rustacean.net/
+[by-example]: https://doc.rust-lang.org/rust-by-example/index.html
+[community-page]: https://www.rust-lang.org/community

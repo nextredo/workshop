@@ -1,16 +1,21 @@
 # The Book
+## My Notes
+- keep terse, makes notes easier to review
+- links where helpful
+
 ## Foreword
 - rust is about empowerment
 
 ## Introduction
-- low-level control, high-level ergonomics
+- low-level control *with* high-level ergonomics
 
 ### Who's Rust For?
 #### Dev Teams
 - compiler is a gatekeeper, doesn't compile w/ bugs
-- `Cargo` brings dependency management to the systems programming world
-- `Rustfmt` brings a consistent style across devs
+- `cargo` brings dependency management to the systems programming world
+- `rustfmt` brings a consistent style across devs
 - `rust-analyzer` juices up IDEs
+- `clippy` is the linting tool
 
 #### Students
 - welcoming community
@@ -18,6 +23,7 @@
 
 #### Companies
 - used in a lot of stuff
+- [Wikipedia Rust Adoption](https://en.wikipedia.org/wiki/Rust_(programming_language)#Adoption)
 
 #### Open Src Devs
 - for those who wanna
