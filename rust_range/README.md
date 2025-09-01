@@ -1,6 +1,13 @@
 # Crab-bucket Mentality
 > [Rust learning resources][learn-rust]
 
+## Use w/ Neovim
+- May have to run the following
+```bash
+rustup component add rust-analyzer
+rustup component add rust-analysis
+```
+
 ## The Book
 ### Usage
 #### Online
@@ -14,8 +21,6 @@ Open [`./submodules/book/README.md`](./submodules/book/README.md)
 rustup doc --book
 ```
 
-### Notes
-
 ## Rustlings
 ### Usage
 #### Online
@@ -23,8 +28,6 @@ See <https://github.com/rust-lang/rustlings/>
 
 #### In This Repo
 Open [`./submodules/rustlings/README.md`](./submodules/rustlings/README.md)
-
-### Notes
 
 ## Other Resources
 - Just see [this link][learn-rust]. Notable others include:

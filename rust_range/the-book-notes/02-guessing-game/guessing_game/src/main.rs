@@ -3,13 +3,20 @@
     // This is a set of things accessible without any imports by default
     // https://doc.rust-lang.org/std/prelude/index.html
 
-// Bring io library into scope
+// Bring libraries into scope
 use std::io;
+use rand::Rng;
 
 // `fn` indicates function declaration
 fn main() {
     // Standard prints, see chapter 1
     println!("Guess the number!");
+
+    // Get thread-local, OS-seeded RNG
+    // `.gen_range()` part of Rng trait - in-scope because of the `use rand::Rng`
+    let secret = rand::thread_rng().gen_range(1..=100);
+    println!("Secret no is {secret:?}");
+
     println!("Please input your guess.");
 
     // Define new variable

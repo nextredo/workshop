@@ -33,5 +33,11 @@
 - Cargo discussed more in Chapter 14
 - [Cargo docs][cargo-docs]
 
+## Docs **IMPORTANT**
+- When you first get a crate, you'll be unsure which methods, functions to call
+- Running `cargo doc --open` helps with this
+  - **Builds dependency docs locally**
+  - Opens in browser
+
 <!--- Links -->
 [cargo-docs]: https://doc.rust-lang.org/cargo/
