@@ -1,4 +1,10 @@
 # Guessing Game
+## Concepts
+- External crates
+- `let`
+- `match`
+- Functions
+
 ## Setting Up a New Project
 - See [the last chapter](../01-getting-started/01-getting-started.md)
 
@@ -39,5 +45,12 @@
   - **Builds dependency docs locally**
   - Opens in browser
 
+## Further Research
+### Enums
+- [According to this guy][r-enum-variants], enums can be basically tagged unions / type-safe unions
+- Like `std::variant` in C++, but a language feature
+  - So you can't abuse the type & the data intentionally
+
 <!--- Links -->
 [cargo-docs]: https://doc.rust-lang.org/cargo/
+[r-enum-variants]: https://www.reddit.com/r/rust/comments/11fi2cb/comment/jajimur/

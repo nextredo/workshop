@@ -19,8 +19,6 @@ fn main() {
     println!("Secret no is {secret:?}");
 
     loop {
-        println!("Please input your guess.");
-
         // Define new variable
             // Mutation
                 // Vars are immutable by default
@@ -71,9 +69,12 @@ fn main() {
             // Returns `Result`, so it can signal failure
         // Rust will infer the type of `secret` to be `u32` like this var
             // Since they get compared together later
-        let guess: u32 = guess.trim()
-            .parse()
-            .expect("Please type a number");
+        // This match block
+            // `_` is a catch-all value in match arms
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
 
         // Macro, `{}` is a placeholder
         // Can put var name directly in them
