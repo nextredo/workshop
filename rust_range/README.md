@@ -40,6 +40,9 @@ Open [`./submodules/rustlings/README.md`](./submodules/rustlings/README.md)
 - [Swag][rustaceans]
 - [Community][community-page]
 
+## Things I've noticed
+- Rust loves *method chaining*
+
 [learn-rust]: https://www.rust-lang.org/learn
 [rustaceans]: https://rustacean.net/
 [by-example]: https://doc.rust-lang.org/rust-by-example/index.html

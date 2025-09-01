@@ -3,8 +3,9 @@
     // This is a set of things accessible without any imports by default
     // https://doc.rust-lang.org/std/prelude/index.html
 
-// Bring libraries into scope
+// Bring things into scope
 use std::io;
+use std::cmp::Ordering;
 use rand::Rng;
 
 // `fn` indicates function declaration
@@ -59,8 +60,32 @@ fn main() {
         .read_line(&mut guess)
         .expect("Failed to read line :(");
 
+    // Variable shadowing (2nd thing named "guess")
+    // Often used when converting between types
+    // More in chapter 3
+    // `.trim()`
+        // Removes leading/trailing whitespace
+    // `.parse()`
+        // Uses the u32 type annotation to parse the string into that type
+    // Rust will infer the type of `secret` to be `u32` like this var
+        // Since they get compared together later
+    let guess: u32 = guess.trim()
+        .parse()
+        .expect("Please type a number");
+
     // Macro, `{}` is a placeholder
     // Can put var name directly in them
     // Or do comma stuff after the string (w/ empty `{}`s)
     println!("You guessed: {guess}");
+
+    // `match` statement consists of *arms*
+    // Arms consist of a *pattern* and the code should run if that pattern matches
+    // Rust looks thru arms in turn
+    // `match` covered further in chapters 6, 19
+    // Useful for ensuring your code covers all possible paths
+    match guess.cmp(&secret) {
+        Ordering::Less => println!("Too small!"),
+        Ordering::Greater => println!("Too big!"),
+        Ordering::Equal => println!("You win!"),
+    }
 }
