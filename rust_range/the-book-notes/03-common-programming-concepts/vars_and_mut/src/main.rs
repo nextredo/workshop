@@ -9,6 +9,33 @@ fn vars() {
     dbg!(CONSTANT);
 }
 
+fn tuples() {
+    // Example tuple definition
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    // Pattern matching to destructure a tuple
+    let (x, y, z) = tup;
+    println!("Destructured tuple is: {x}, {y}, {z}");
+
+    // Access by period indexing
+    // (1st index is 0)
+    let elem = tup.0;
+    println!("Element at position is {elem}");
+
+    // Special tuple
+    // Called *unit*
+    // Represents an empty value / empty return type
+    // If expressions don't return anything, they implicitly return the unit value
+    let unit_type = ();
+    dbg!(unit_type);
+}
+
+
+fn arrays() {
+
+}
+
+
 fn shadows() {
     // 1st `x`
     // *shadowed* by 2nd `x`
@@ -34,5 +61,6 @@ fn shadows() {
 fn main() {
     vars();
     shadows();
+    tuples();
 }
 

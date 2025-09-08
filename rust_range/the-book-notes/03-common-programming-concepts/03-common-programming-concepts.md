@@ -42,6 +42,84 @@
   - Can sorta allow us to have a new immutable variable, after doing some operations on it
 
 ## Data Types
+- All values have a *data type*
+- Rust is *statically typed* (all data types known at compile time)
+
+### Scalar
+- Represents a single value
+
+#### Integers
+- Number without fractional component
+- Sizes 8, 16, 32, 64, 128, `size` (architecture dependent)
+- Rust's default is `u32`
+- Use `isize`/`usize` when indexing collections
+
+##### Literals
+- Decimal: `982`
+- Hex: `0xff`
+- Octal: `0o77`
+- Binary: `0b1100`
+- Byte (`u8` only): `b'A'`
+- Using digits separator: `1_000`
+
+##### Signed
+- `-2^(n-1) <= x <= 2^(n-1) - 1`
+
+##### Unsigned
+- `0 <= x <= 2^n - 1`
+
+##### Overflow
+- Debug builds panic on int overflows at runtime
+- Release builds don't
+  - Performs "2's complement wrapping instead"
+  - Probably not great to rely on int overflow behaviour
+- Handle overflows explicitly with
+  - `wrapping_*` methods (e.g. `wrapping_add`)
+  - Return `None` for overflows in `checked_*` methods
+  - Return `Bool` for overflows with the `overflowing_*` methods
+  - Saturate with the `saturating_*` methods
+
+#### Floating-point numbers
+- Decimal no's
+- `f32` & `f64`
+- Default is `f64`
+  - Roughly the same speed as `f32` on modern CPUs apparently
+- Represented by the *IEEE-754 standard*
+
+##### Numeric Operations
+- `+, -, *, /`
+- `%` too for modulus/remainder
+- Int division truncates towards 0 (to the nearest int)
+
+#### Booleans
+- `bool`s are 1 byte
+- Great for conditionals
+
+#### Characters
+- `char` = primitive alphabetic type
+- Specify char literals with single quotes (`'`)
+- **Rust's char type is 4 bytes in size**
+  - Unicode scalar value - not just ASCII
+  - U+0000 to U+D7FF and U+E000 to U+10FFFF inclusive
+- Intuition for chars mighn't match what you're thinkin here
+  - Discussed more in chapter 8
+
+### Compound
+- Groups values into one type
+- 2 primitives for this exist
+
+#### Tuple
+- General way to group together values with a variety of types
+- Fixed length
+  - Can't grow/shrink once declared
+- See [the code][vars-code] for more info
+
+#### Array
+- See [the code][vars-code] for more info
+
+##### Accessing Array Elements
+##### Invalid Array Element Access
+
 ## Functions
 ## Comments
 ## Control Flow
@@ -49,3 +127,4 @@
 <!-- Links -->
 [raw-id-syntax]: https://doc.rust-lang.org/book/appendix-01-keywords.html
 [const-eval]: https://doc.rust-lang.org/reference/const_eval.html
+[vars-code]: ./vars_and_mut/src/main.rs
