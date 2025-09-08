@@ -32,7 +32,27 @@ fn tuples() {
 
 
 fn arrays() {
+    // Deduced (inferred) array length
+    let a = [1, 2, 3, 4, 5];
 
+    // Array type annotation
+    let b: [i32; 5] = [6, 7, 8, 9, 10];
+
+    // Specify all the same elements in an array
+    // This creates an array of 5 elements, all initialised to 3
+    let c = [3; 5];
+
+    dbg!(a);
+    dbg!(b);
+    dbg!(c);
+
+    println!("0th value: {}", a[0]);
+
+    // This panics!
+    // *runtime error*
+    // index cannot be >= array length
+    // more about handling errors well in chapter 9
+    println!("n+1th value: {}", a[a.len() + 1]);
 }
 
 
@@ -62,5 +82,6 @@ fn main() {
     vars();
     shadows();
     tuples();
+    arrays();
 }
 

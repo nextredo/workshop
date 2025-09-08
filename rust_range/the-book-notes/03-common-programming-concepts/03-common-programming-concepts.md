@@ -110,15 +110,22 @@
 
 #### Tuple
 - General way to group together values with a variety of types
-- Fixed length
+- Fixed length (compile time)
   - Can't grow/shrink once declared
 - See [the code][vars-code] for more info
 
 #### Array
+- Fixed length (compile time)
+- Good for *stack allocation* of data (heap discussed in chapter 4)
+  - Arrays are a chunk of memory of known, fixed size that can be on the stack
+- *Vectors* are more flexible (ableit heap-based)
 - See [the code][vars-code] for more info
 
 ##### Accessing Array Elements
+- Indexed starting from 0
+
 ##### Invalid Array Element Access
+- See code
 
 ## Functions
 ## Comments
