@@ -144,11 +144,33 @@
 - These evaluate to a resultant value
 
 ### Returns
+- See [the code][funcs-code]
 
 ## Comments
+
+```rust
+// Good for source code explanation
+// Idiomatic style is this type of comment
+
+// More common to put here
+let _var = 4; // But can put it at end of a statement
+
+/*
+Can also use these comments
+This isn't explained in this chapter for some reason
+Can be seen here though:
+https://doc.rust-lang.org/rust-by-example/hello/comment.html
+*/
+
+/// Library docs for following item
+//! Library docs for enclosing item
+```
+
 ## Control Flow
 
 <!-- Links -->
 [raw-id-syntax]: https://doc.rust-lang.org/book/appendix-01-keywords.html
 [const-eval]: https://doc.rust-lang.org/reference/const_eval.html
+
 [vars-code]: ./vars_and_mut/src/main.rs
+[funcs-code]: ./funcs/src/main.rs
