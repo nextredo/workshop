@@ -131,6 +131,16 @@
 - `fn` keyword
 - `snake_case` conventionally used for func & variable names
 
+### Statements & Expressions
+- Rust is an *"expression-based language"*
+- Function bodies are made of statements with an optional ending expression
+
+#### Statement
+- Instructions that perform an action, and *don't* return a value
+
+#### Expression
+- These evaluate to a resultant value
+
 ## Comments
 ## Control Flow
 
