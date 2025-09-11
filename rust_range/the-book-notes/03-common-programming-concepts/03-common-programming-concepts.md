@@ -128,6 +128,9 @@
 - See code
 
 ## Functions
+- `fn` keyword
+- `snake_case` conventionally used for func & variable names
+
 ## Comments
 ## Control Flow
 
