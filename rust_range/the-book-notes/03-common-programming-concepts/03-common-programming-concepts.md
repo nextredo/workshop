@@ -167,6 +167,15 @@ https://doc.rust-lang.org/rust-by-example/hello/comment.html
 ```
 
 ## Control Flow
+### `if`, `else if` and `else`
+- Useful to do something conditionally
+
+### Loops
+- Useful to do the same thing more than once
+
+#### `loop`
+#### `while`
+#### `for`
 
 <!-- Links -->
 [raw-id-syntax]: https://doc.rust-lang.org/book/appendix-01-keywords.html
