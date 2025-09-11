@@ -137,9 +137,13 @@
 
 #### Statement
 - Instructions that perform an action, and *don't* return a value
+- These evaluate to a value expressed as `()`
+  - This is the unit type
 
 #### Expression
 - These evaluate to a resultant value
+
+### Returns
 
 ## Comments
 ## Control Flow

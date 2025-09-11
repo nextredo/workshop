@@ -50,6 +50,23 @@ fn expressions() {
 }
 
 
+fn returners(early_ret: bool) -> i32 {
+
+    // Returns are unnamed
+    // Require declaration in the function signature
+    // Synonymous w/ the final expression in a function's body block
+        // Last value returned implicitly
+
+    // Can return early with the `return` keyword
+    if early_ret {
+        return 3 + 3;
+    }
+
+    // Don't use a return here by convention
+    6 + 4
+}
+
+
 fn main() {
     // Doesn't have to be defined before it's used
     // Just has to be in accessible in the caller's scope
@@ -58,4 +75,5 @@ fn main() {
 
     statements();
     expressions();
+    returners(false);
 }
