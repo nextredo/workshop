@@ -5,7 +5,7 @@
   - Garbage collection
   - Manual memory management
 
-## Ownership
+## What Is Ownership?
 >P.S. I wonder if this is similar to ownership & borrowing in C++<br>
 >e.g. `std::unique_ptr` and `std::move`
 
@@ -46,6 +46,10 @@
 - Range in which an item is valid
 - Valid when *in scope*
 - Goes *out of scope* and becomes invalid
+- **Rust automatically frees memory after variables go out of scope**
+  - This is done through a function called `drop`
+  - This is similar to *Resource Acquisition Is Initialisation (RAII)* in C++
+    - I've used that a lot haha
 
 ```rust
 {                 // s invalid (not declared yet)
@@ -55,6 +59,18 @@
 }                 // s no longer valid (out of scope)
 ```
 
-## Borrowing
+### `String` Type
+- String literals are great, but this is necessary too
+
+#### Mutability
+- Literals cannot be mutable
+  - Hardcoded into the program
+- `String` can be mutable
+  - Unknown amount of memory on heap at runtime
+
+### Copy vs. Move
+- *Rust will never automatically create "deep" copies of data*
+  - Any *automatic* copying can be assumed to have an inexpensive runtime cost
+
+## References & Borrowing
 ## Slices
-## Data layout
