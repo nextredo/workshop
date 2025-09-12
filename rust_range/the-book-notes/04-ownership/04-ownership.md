@@ -75,17 +75,20 @@
 #### `Copy` trait
 - For types stored on the stack
 - More about traits in chapter 10
-- If a type implements this, values don't move but are trivially copied instead
+- **If a type implements this, values don't move but are trivially copied instead**
 - *We can't annotate with `Copy` if the type implements the `Drop` trait*
   - More in Appendix C - Derivable Traits
 
-##### Who's copyable?
-- All integer types
-- `bool`
-- All floating point types
-- `char`
-- Tuples
-  - So long as they only contain types that implement `Copy`
+##### What's copyable?
+- Usually, any group of simple scalars
+- Nothing that requires allocation
+- Examples are:
+  - All integer types
+  - `bool`
+  - All floating point types
+  - `char`
+  - Tuples
+    - So long as they only contain types that implement `Copy`
 
 ## References & Borrowing
 ## Slices

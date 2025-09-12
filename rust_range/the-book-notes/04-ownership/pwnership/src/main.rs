@@ -71,8 +71,67 @@ fn clone_wars() {
 }
 
 
+fn own_it(words: String) {
+    dbg!(words);
+    // String goes out of scope, `drop` called
+}
+
+
+fn borrow_it(value: i32) {
+    dbg!(value);
+    // Copied int goes out of scope, nothing special happens
+}
+
+
+fn pwn_fns() {
+    // Kinda like pass by value vs. pass by reference??
+
+    let s = String::from("hi");
+    own_it(s);                  // `s` moved into the function
+    //dbg!(s);                  // Can't do it
+
+    let x = 3;
+    borrow_it(x);               // `i32` implements `Copy`, so that trait is used
+    dbg!(x);                    // So it can be used after (doesn't move)
+}
+
+
+fn gives_ownership() -> String {
+    let var = String::from("have it bro");
+    var
+}
+
+
+fn takes_then_gives_back(value_pls: String) -> String {
+    let len = value_pls.len();
+    println!("len of {len}");
+    value_pls
+}
+
+
+fn returners() {
+    let s1 = gives_ownership();
+
+    // Tranferring ownership into and out of everything all the time
+    // would be a giant pain in the ass
+    // Thankfully, we have *references*
+    let s2 = String::from("hi");
+    let s3 = takes_then_gives_back(s2);
+
+    dbg!(&s1);
+    //dbg!(&s2);
+    dbg!(&s3);
+
+    // s1 goes out of scope (dropped)
+    // s2 was moved, so nothing happens
+    // s3 goes out of scope (dropped)
+}
+
+
 fn main() {
     dropping();
     moving();
     clone_wars();
+    pwn_fns();
+    returners();
 }
