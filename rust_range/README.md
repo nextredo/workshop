@@ -21,6 +21,9 @@ Open [`./submodules/book/README.md`](./submodules/book/README.md)
 rustup doc --book
 ```
 
+### Notes
+- Very important notes are marked in **bold**
+
 ## Rustlings
 ### Usage
 #### Online

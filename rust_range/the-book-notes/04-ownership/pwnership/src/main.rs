@@ -14,9 +14,11 @@ fn moving() {
     let x = 5;
 
     // Copy value in `x`, bind it to `y`
+    // This happens, since integers are simple, fixed-size stack-based items
+    // No reason to invalidate `x` when `y` is created (unlike 2x free for `String`s)
+    // **No difference between a deep and shallow copy here**
     let y = x;
 
-    // This happens, since integers are simple, fixed-size stack-based items
     dbg!(&x);
     dbg!(&y);
 
@@ -57,7 +59,15 @@ fn moving() {
 
 
 fn clone_wars() {
+    let s1 = String::from("hi");
 
+    // Method syntax discussed in chapter 5
+    // `.clone()` will "deep copy" this object
+    // Shows directly that something non-trivial is going on
+    let s2 = s1.clone();
+
+    dbg!(&s1);
+    dbg!(&s2);
 }
 
 
