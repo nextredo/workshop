@@ -89,6 +89,3 @@
   - `char`
   - Tuples
     - So long as they only contain types that implement `Copy`
-
-## References & Borrowing
-## Slices
