@@ -1,3 +1,5 @@
+mod references;
+
 fn dropping() {
     // `::` operator lets us namespace the function (more in chapter 5)
     let mut s = String::from("hello"); // s valid here onwards
@@ -134,4 +136,6 @@ fn main() {
     clone_wars();
     pwn_fns();
     returners();
+
+    references::main();
 }
