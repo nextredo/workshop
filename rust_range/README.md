@@ -38,7 +38,10 @@ rustup component add rust-analysis
 - [Community][community-page]
 
 ## Things I've noticed
-- Rust loves *method chaining*
+- Rust loves the following
+  - Method chaining
+  - Variable shadowing
+
 
 [learn-rust]: https://www.rust-lang.org/learn
 [rustaceans]: https://rustacean.net/
