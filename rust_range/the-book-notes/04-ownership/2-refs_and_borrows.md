@@ -50,4 +50,8 @@ int main() {
 ## More on References
 - **A reference's scope starts from where it's introduced, and ends at the last time it's used**
 
+## Dangling References
+- Rust prevents these at compile-time
+- Done though *lifetimes* (chapter 10)
+
 [by-example-aliasing]: https://doc.rust-lang.org/rust-by-example/scope/borrow/alias.html#aliasing

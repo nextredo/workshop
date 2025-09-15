@@ -67,7 +67,17 @@ fn multi_immutable_borrow() {
     // Therefore, their scopes end here
 
     let r3 = &mut s; // no worries
+    println!("{r3}");
 }
+
+
+// The concept of *lifetimes* prevents this
+// fn dangling_ref() -> &String {
+//     let s = String::from("megahehe");
+//
+//     &s // We return a reference to `s`
+// }      // `s` dropped here (out of scope)
+// Would alternatively work fine if we moved ownership outta here
 
 
 pub fn main() {
@@ -83,4 +93,7 @@ pub fn main() {
 
     // Mutable reference
     change(&mut s1);
+
+    multi_mutable_borrow();
+    multi_immutable_borrow();
 }
