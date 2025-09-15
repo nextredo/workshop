@@ -1,4 +1,5 @@
 mod references;
+mod slices;
 
 fn dropping() {
     // `::` operator lets us namespace the function (more in chapter 5)
@@ -138,4 +139,5 @@ fn main() {
     returners();
 
     references::main();
+    slices::main();
 }
