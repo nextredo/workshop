@@ -39,10 +39,9 @@ fn first_word_bad(s: &String) -> usize {
 // Like `const char*` in C I guess?
 // This is the type of string slices, and the type of string literals
 // It's just a pointer and a length under the hood
-fn first_word(s: &String) -> &str {
+fn first_word_ok(s: &String) -> &str {
     // How can we return something talking about *part* of a string?
     // Enter, slices
-
     let bytes = s.as_bytes();
 
     for (i, &item) in bytes.iter().enumerate() {
@@ -55,6 +54,36 @@ fn first_word(s: &String) -> &str {
 }
 
 
+// The only change between this and the other "first word" function
+// is that the signature has changed.
+// We now use `&str` instead of `&String` for the input parameter
+// This allows us to use it on *both `&String` and `&str` values
+//
+// We can pass a `&String` to this function, and it will use a *deref coercion*
+// More in chapter 15
+fn first_word_best(s: &str) -> &str {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return &s[0..i];
+        }
+    }
+
+    &s[..]
+}
+
+
+fn literally() {
+    // `s` is of type `&str`
+    // It's a string slice, pointing to a bit of the binary
+    // It's an immutable reference
+    let s = "hello world";
+
+    dbg!(s);
+}
+
+
 #[allow(unused_variables)]
 pub fn main() {
     let mut s = String::from("aaa bbb ccc");
@@ -62,9 +91,9 @@ pub fn main() {
     let word = first_word_bad(&s);
 
     // `word` can get out of sync!!
-    dbg!(&word);
+    dbg!(&word); // holds correct value
     s.clear();
-    dbg!(&word);
+    dbg!(&word); // holds value that's no longer correct
 
     // Slices :)
     // Created using a `Range` within square brackets
@@ -86,7 +115,7 @@ pub fn main() {
     // Function that returns a string slice
     // Since it now returns a kind of reference (slice), Rust's borrow rules come into place
     // It returns an immutable reference, so we can't make a mutable one while that's alive
-    let word = first_word(&s);
+    let word = first_word_ok(&s);
     // `word` not used after this point, it's lifetime ends here
 
     s.clear();
@@ -94,6 +123,16 @@ pub fn main() {
     // Can't add, would prolong immutable reference lifetime
     // so it overlaps w/ the mutable reference's livetime
     // dbg!(&word);
+
+    // Can pass `&String`, `&str`
+    let word = first_word_best(&s);
+    let word = first_word_best(&s[0..6]);
+
+    // Other slices
+    let a = [1, 2, 3, 4, 5];
+    dbg!(&a[0..2]);
+
+    literally();
 }
 
 
