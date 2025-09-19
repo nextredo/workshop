@@ -27,20 +27,59 @@ fn basic_instantiation() {
 }
 
 
-fn main() {
-    basic_instantiation();
-
-    let user = User {
-        // key: value pairs
-        // can be in any order (doesn't need to match definition)
+fn field_init_shorthand(email: String, username: String) -> User {
+    User {
+        // Field init shorthand
+        // Parameter names are the same as the fields
+        // Rust uses (for example) username: username here
+        // So it would work if we had a local variable called `username` instead
         active: true,
-        username: String::from("bilbo_swaggins"),
-        email: String::from("notinmyshire22@gmail.com"),
+        username,
+        email,
         sign_in_count: 48,
-    };
-    dbg!(&user);
+    }
+}
 
+
+fn struct_update_syntax(user: User) {
+    // Without the update syntax
+    let new_user = User {
+        active: user.active,
+        username: user.username,
+        email: String::from("whaa"),
+        sign_in_count: user.sign_in_count,
+    };
+
+    // With the update syntax
+    // Specifies fields not explicitly set should have
+    // the same value as the given instance
+    // `..new_user` must come last
+    let new_user_2 = User {
+        email: String::from("whaa"),
+        ..new_user
+    };
+    dbg!(new_user_2);
+
+    // This moves values from `new_user` to `new_user_2` where applicable
+    // We specified the email, so that's not moved
+    // The primitive types implement `Copy` since they're stack-based, so that's ok
+    // However, `username` has been moved into this new object
+    //dbg!(new_user);
+}
+
+
+fn main() {
     // Tuple, for comparison
     let hehe: (i32, i64) = (9, 20);
-    dbg!(&hehe);
+    dbg!(hehe);
+
+    basic_instantiation();
+
+    let user = field_init_shorthand(
+        String::from("huh"),
+        String::from("uhh")
+    );
+    dbg!(&user);
+
+    struct_update_syntax(user);
 }
