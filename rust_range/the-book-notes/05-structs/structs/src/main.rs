@@ -9,6 +9,27 @@ struct User {
     sign_in_count: u64,
 }
 
+
+// Rust also has *tuple structs*
+// Like structs, do have a struct name
+// Like tuples, don't have field names
+// Good for
+  // Giving whole tuple a name
+  // Making tuple different from other tuples
+  // When naming each field is verbose / redundant
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+
+
+// We also have *unit-like structs*"
+// (structs with no fields)
+// Behaves like `()`
+// Good for when you need to implement a trait on a type,
+// but you don't ned to store data in the type itself
+// More in chapter 10
+struct AlwaysEqual;
+
+
 fn basic_instantiation() {
     // Create a struct *instance* (instantiate it)
     // Either the whole thing is mutable, or it's immutable
@@ -68,6 +89,20 @@ fn struct_update_syntax(user: User) {
 }
 
 
+fn tuple_structs() {
+    // These are different types
+    // (since they're instances of different types)
+    let _black = Color(0, 0, 0);
+    let origin = Point(0, 0, 0);
+
+    // Destructuring
+    let Point(_x, _y, _z) = origin;
+
+    // Individual values
+    println!("0: {}", origin.0);
+}
+
+
 fn main() {
     // Tuple, for comparison
     let hehe: (i32, i64) = (9, 20);
@@ -82,4 +117,6 @@ fn main() {
     dbg!(&user);
 
     struct_update_syntax(user);
+
+    tuple_structs();
 }
