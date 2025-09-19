@@ -1,5 +1,8 @@
 // Define a struct like so
 // Name should describe the significance of the data grouped together
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// See the accompanying markdown notes as to why we chose `String` not `&str`
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 #[derive(Debug)]
 struct User {
     // Each of these are *fields*
