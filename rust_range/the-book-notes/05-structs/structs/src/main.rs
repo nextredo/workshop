@@ -1,3 +1,5 @@
+#![allow(dead_code)]
+
 // Define a struct like so
 // Name should describe the significance of the data grouped together
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
