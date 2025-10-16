@@ -1,5 +1,8 @@
 #![allow(dead_code)]
 
+// Explicit opt-in to the `Debug` automatically generated trait implementation
+// Outer attribute
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -33,5 +36,31 @@ fn area_struc(rect: &Rectangle) -> u32 {
 }
 
 fn main() {
+    let rec = Rectangle {
+        width: 5,
+        height: 2
+    };
 
+    // Error - `Rectangle` doesn't implement std::fmt::Display
+    // Compiler warns about this, suggests using `:?`
+    // Using `:?` doesn't help though - needs to implement `Debug`
+    // Compiler states you can use `#[derive(Debug)]`
+    println!("rectangle = {rec:?}");
+
+    // You can print out slightly better formatted/styled debug info like so
+    println!("rectangle = {rec:#?}");
+
+    // This macro takes ownership
+    // Prints to stderr (more in chapter 12)
+    // Returns ownership though
+    dbg!(area_struc(&rec));
+
+    // Can use `dbg!` like so:
+    let rec = Rectangle {
+        width: dbg!(6 * 4),
+        height: 2
+    };
+
+    // Not taking ownership here
+    dbg!(&rec);
 }

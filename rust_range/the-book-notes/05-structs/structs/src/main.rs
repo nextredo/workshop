@@ -16,6 +16,7 @@ struct User {
 
 
 // Rust also has *tuple structs*
+// (named tuples)
 // Like structs, do have a struct name
 // Like tuples, don't have field names
 // Good for

@@ -28,3 +28,5 @@ struct User2 {
     sign_in_count: u64,
 }
 ```
+
+## Adding Useful Functionality with Derived Traits
