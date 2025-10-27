@@ -30,3 +30,44 @@ struct User2 {
 ```
 
 ## Adding Useful Functionality with Derived Traits
+
+## Method Syntax
+- Functions (declare with `fn`)
+  - Have parameters, return values
+- Defined within the context of a struct (or enum/trait object, chapters 6, 18)
+- First parameter is always `self`
+
+### Reasons to use them
+- Shorter syntax (`&self` usage instead of repeating the type everywhere)
+- Organisational purposes
+  - Groups related code together
+  -
+
+### Quirks
+- Can double up on method and member names
+
+### `->` operator
+- C and C++ use `.` for methods/fields on objects directly, `->` for use indirectly (via pointers)
+- Rust does not do this, no `->` equivalent
+- Rust does *automatic referencing and dereferencing*
+  - Methods are one of the few places this is used
+- Works since methods have a clear receiver (`self`)
+- Rust can definitively figure out if `self` is `&self`, `&mut self` or `self`
+  - **Reading, mutating or consuming**
+
+```rust
+// Rust automatically adds `&`, `&mut`, `*`
+// So that `p1` (the object) matches the method signature
+p1.distance(&p2);
+
+// So under the hood, it's really
+(&p1).distance(&p2);
+
+// Assume the distance looks like this
+impl Point {
+    // Immutable self borrow, immutable other point borrow
+    fn distance(&self, point: &Point) -> u32 {
+        // < distance calc code goes here >
+    }
+}
+```

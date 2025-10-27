@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+mod better_rects;
+
 // Explicit opt-in to the `Debug` automatically generated trait implementation
 // Outer attribute
 #[derive(Debug)]
@@ -63,4 +65,6 @@ fn main() {
 
     // Not taking ownership here
     dbg!(&rec);
+
+    better_rects::main();
 }
