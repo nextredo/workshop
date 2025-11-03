@@ -12,6 +12,10 @@
  * key:    value
  */
 
+// NOTE: sscanf version.
+// Bad since sscanf doesn't report conversion errors
+// Alternatively, do strstr() and strtol() checking instead
+
 int main() {
     errno = 0;
     FILE* file = fopen(FILEPATH, "r");
@@ -20,22 +24,26 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    char buffer[BUF_LEN];
-    char* ptr = fgets(buffer, BUF_LEN, file);
-    if (!ptr) {
-        perror("Bad fgets");
-        return EXIT_FAILURE;
-    }
-
-    // NOTE: scanf version below. Bad since it doesn't report conversion errors
-    // Alternatively, do strstr() and strtol() checking instead
     long bing = 0;
-    errno = 0;
-    int ret = sscanf(buffer, "bing: %ld", &bing);
-    if (ret != 1) {
-        perror("Bad sscanf");
-        return EXIT_FAILURE;
+    char buffer[BUF_LEN];
+
+    printf("reading %s...\n", FILEPATH);
+    while (fgets(buffer, BUF_LEN, file)) {
+        errno = 0;
+        int ret = sscanf(buffer, "bing: %ld", &bing);
+        if (ret != 1) {
+            errno = 0;
+            int ret = fprintf(stderr, ":( sscanf unhappy\n");
+            if (ret < 0) {
+                perror("Bad fprintf");
+                return EXIT_FAILURE;
+            } else {
+                printf(":) sscanf happy\n");
+            }
+
+        }
     }
+    printf("read it\n");
 
     printf("bing: %ld\n", bing);
 
