@@ -27,10 +27,17 @@ int main() {
     long bing = 0;
     char buffer[BUF_LEN];
 
+    // WARN:
+    // fgets will only ever produce a line of BUF_LEN
+    // unit_str can only hold BUF_LEN chars
+    // this means it'll never overflow, but, the sscanf could overflow it if it wanted to
+    // since it has no idea of the size of unit_str, and will just shove shit it finds in there
+    char unit_str[BUF_LEN];
+
     printf("reading %s...\n", FILEPATH);
     while (fgets(buffer, BUF_LEN, file)) {
         errno = 0;
-        int ret = sscanf(buffer, "bing: %ld", &bing);
+        int ret = sscanf(buffer, "bing: %ld %s", &bing, unit_str);
         if (ret != 1) {
             errno = 0;
             int ret = fprintf(stderr, ":( sscanf unhappy\n");
@@ -46,6 +53,6 @@ int main() {
     printf("read it\n");
 
     printf("bing: %ld\n", bing);
-
+    printf("unit_str: %s\n", unit_str);
     return EXIT_SUCCESS;
 }
