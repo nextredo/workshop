@@ -39,9 +39,10 @@ struct User2 {
 
 ### Reasons to use them
 - Shorter syntax (`&self` usage instead of repeating the type everywhere)
+  - Equates to `self: &Self`
+  - Where `Self` is an alias for the `impl` block's type
 - Organisational purposes
   - Groups related code together
-  -
 
 ### Quirks
 - Can double up on method and member names
@@ -54,6 +55,7 @@ struct User2 {
 - Works since methods have a clear receiver (`self`)
 - Rust can definitively figure out if `self` is `&self`, `&mut self` or `self`
   - **Reading, mutating or consuming**
+- Great for ergonomics
 
 ```rust
 // Rust automatically adds `&`, `&mut`, `*`
@@ -71,3 +73,4 @@ impl Point {
     }
 }
 ```
+

@@ -8,9 +8,8 @@ struct Rect {
 // Start an `impl` (implementation) block for `Rect`
 // Everything in here is associated with `Rect`
 impl Rect {
-
     // Using `&self` instead of `rec: &Rect`
-    // Within an `impl` block, `&self` is short for `self: &Self`
+    // *Within an `impl` block, `&self` is short for `self: &Self`*
         // Where `Self` is an alias for the type the impl block is for
     fn area(&self) -> u32 {
         // This immutably borrows self instead of taking ownership of it
@@ -28,6 +27,11 @@ impl Rect {
     fn width(&self) -> bool {
         self.width > 0
     }
+
+    // Determines if another rectangle can fit entirely within this one
+    fn can_hold(&self, other: &Rect) -> bool {
+        self.width > other.width && self.height > other.height
+    }
 }
 
 
@@ -37,6 +41,14 @@ pub fn main() {
         height: 20
     };
 
+    let rec2 = Rect {
+        width: 5,
+        height: 15
+    };
+
     // Call using "method syntax"
     dbg!(rec.area());
+
+    // Check against another rect
+    dbg!(rec.can_hold(&rec2));
 }
