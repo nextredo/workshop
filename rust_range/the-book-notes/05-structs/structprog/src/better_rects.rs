@@ -32,6 +32,16 @@ impl Rect {
     fn can_hold(&self, other: &Rect) -> bool {
         self.width > other.width && self.height > other.height
     }
+
+    // Associated function
+    // Using the `Self` type alias
+    // But doesn't require an instance of "self" to operate on
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
+    }
 }
 
 
@@ -51,4 +61,9 @@ pub fn main() {
 
     // Check against another rect
     dbg!(rec.can_hold(&rec2));
+
+    // Using associated functions
+    // Namespaced by the struct
+    // `::` used for associated functions and module namespaces (Chapter 7)
+    dbg!(Rect::square(3));
 }

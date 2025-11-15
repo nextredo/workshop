@@ -74,3 +74,17 @@ impl Point {
 }
 ```
 
+### Associated Functions
+- Methods are *associated functions*
+  - As they're associated with the type after the `impl`
+- Not all associated functions are methods
+  - No `self` first parameter == not a method
+- They don't need an instance of their type to work with
+  - Example: `String::from()`
+- Associated functions are often things like constructors (typically named `new`)
+  - Though `new` isn't a language keyword
+- `Self` is a shrthand for the type after the `impl` keyword - e.g. `Rect`
+
+### Multiple Impl Blocks
+- Can have methods across multiple `impl` blocks
+- Useful for generics and traits (Chapter 10)
