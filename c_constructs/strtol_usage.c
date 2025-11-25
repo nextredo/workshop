@@ -6,10 +6,10 @@
 #define FILEPATH "/tmp/hehe"
 
 /* Expecting a basic file that looks like this:
- * key:    value
- * key:    value
- * key:    value
- * key:    value
+ * key: value
+ * key: value
+ * key: value
+ * key: value
  */
 
 // NOTE: sscanf version.
