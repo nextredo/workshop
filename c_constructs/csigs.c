@@ -62,4 +62,5 @@ int main()
     exit(EXIT_SUCCESS);
 }
 
+#undef UNUSED
 // NOLINTEND(cppcoreguidelines-*)
