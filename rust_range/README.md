@@ -1,4 +1,5 @@
 # Crab-bucket Mentality
+> Collective noun: Rustaceans<br>
 > [Rust learning resources][learn-rust]
 
 ## Use w/ Neovim

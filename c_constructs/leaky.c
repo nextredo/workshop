@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <time.h>
 #include <unistd.h>
 
 // NOTE References
@@ -21,6 +22,19 @@ int main(int argc, const char** argv) {
     if (argc == 1) {
         free(p);
     }
+
+    // Optional extra leakage
+    // Disabling linting because this is *horrendous* code
+    // NOLINTBEGIN(*)
+    srand(time(NULL));
+    char* lol = malloc(45);
+    printf("mem waster: %p\n", lol);
+    lol[0] = 55;
+    lol[4] = 20;
+    lol[30] = rand();
+    printf("mem waster: %d\n", lol[30]);
+    // NOLINTEND(*)
+
 
     return 1;
 }

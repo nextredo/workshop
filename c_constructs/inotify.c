@@ -43,15 +43,6 @@ int main(int argc, const char** argv) {
         return EXIT_FAILURE;
     }
 
-    // TODO remove this crap
-    srand(time(NULL));
-    char* lol = malloc(45);
-    printf("mem waster: %p\n", lol);
-    lol[0] = 55;
-    lol[4] = 20;
-    lol[30] = rand();
-    printf("mem waster: %d\n", lol[30]);
-
     // Infini-loop
     uint8_t buffer[BUF_LEN];
     ssize_t n_bytes = 0;
