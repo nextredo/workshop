@@ -47,7 +47,6 @@ void inc(int* num)
 }
 
 // ----------------------------------- main ------------------------------------
-
 int main()
 {
     UNUSED handler_t prev_handler = signal(SIGSEGV, sig_hdlr);
