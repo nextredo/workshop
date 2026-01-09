@@ -83,7 +83,7 @@ impl Point {
   - Example: `String::from()`
 - Associated functions are often things like constructors (typically named `new`)
   - Though `new` isn't a language keyword
-- `Self` is a shrthand for the type after the `impl` keyword - e.g. `Rect`
+- `Self` is a shorthand for the type after the `impl` keyword - e.g. `Rect`
 
 ### Multiple Impl Blocks
 - Can have methods across multiple `impl` blocks

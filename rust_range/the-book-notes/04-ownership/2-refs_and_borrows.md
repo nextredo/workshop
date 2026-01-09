@@ -29,7 +29,7 @@ int main() {
 - **Can't have multiple mutable references to the same data at once**
   - This allows Rust to prevent data races at compile time
   - Data races happen when
-    - >=2 pointers accessing the same data at once
+    - \>=2 pointers accessing the same data at once
     - At least one of the pointers is used to write to the data
     - No mechanism to synchronise data access
 

@@ -1,7 +1,3 @@
-fn other_fn() {
-    dbg!();
-}
-
 // Function with *parameters*
 // Values provided to the parameters are called *arguments*
 // These two terms are often used interchangably though
@@ -76,4 +72,9 @@ fn main() {
     statements();
     expressions();
     returners(false);
+}
+
+
+fn other_fn() {
+    dbg!();
 }

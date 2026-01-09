@@ -1,7 +1,7 @@
 // Function that takes a string reference
 // Returns the first "word" in the string
   // i.e. the first set of characters before a space
-// Ignoring the possiblity of multibyte UTF-8 characters here
+// Ignoring the possibility of multibyte UTF-8 characters here
 fn first_word_bad(s: &String) -> usize {
     // Naive (sliceless) implementation
 
@@ -121,7 +121,7 @@ pub fn main() {
     s.clear();
 
     // Can't add, would prolong immutable reference lifetime
-    // so it overlaps w/ the mutable reference's livetime
+    // so it overlaps w/ the mutable reference's lifetime
     // dbg!(&word);
 
     // Can pass `&String`, `&str`

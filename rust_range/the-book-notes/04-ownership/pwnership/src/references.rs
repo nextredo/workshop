@@ -8,7 +8,7 @@ fn calc_len_own(s: String) -> (String, usize) {
 
 // Use a reference instead
 // Dereferencing achieved with `*` - chapter 8 & 15 stuff
-// Type of `s` is a *reference to a `String`*
+// Type of `s` is a *reference to a `String`
 fn calc_len_ref(s: &String) -> usize {
     s.len()
 

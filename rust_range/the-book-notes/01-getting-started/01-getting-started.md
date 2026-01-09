@@ -67,7 +67,7 @@ cargo build
 cargo run
 
 # Check it builds (don't make executable)
-# Much faster that build
+# Much faster than build
 cargo check
 ```
 

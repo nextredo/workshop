@@ -118,7 +118,7 @@
 - Fixed length (compile time)
 - Good for *stack allocation* of data (heap discussed in chapter 4)
   - Arrays are a chunk of memory of known, fixed size that can be on the stack
-- *Vectors* are more flexible (ableit heap-based)
+- *Vectors* are more flexible (albeit heap-based)
 - See [the code][vars-code] for more info
 
 ##### Accessing Array Elements
