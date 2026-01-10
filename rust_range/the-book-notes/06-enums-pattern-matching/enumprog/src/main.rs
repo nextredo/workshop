@@ -1,6 +1,9 @@
 #![allow(dead_code)]
 #![allow(unused)]
 
+mod more_enums;
+mod option_enum;
+
 // Basic IP address enum
 // Doesn't associate data & classification like a variant
 enum IpAddrKind {
@@ -30,18 +33,20 @@ enum IpAddr2 {
 
 // Enums are better than structs here as well, as...
 // You can have different data (amounts, types) associated with each variant
+// Can even include other enums in here
 enum IpAddr3 {
     V4(u8, u8, u8, u8),
     V6(String),
 }
 
-// The standard library has a type for it though :)
-// use std::net::IpAddr;
+// The standard library has a type for it :)
+// Instead of strings though, it uses a v4 and v6 struct
+use std::net::IpAddr;
 
 fn main() {
     let four = IpAddrKind::V4;
     let four = IpAddr1 {
-        kind: IpAddrKind::V4,
+        kind: four,
         address: String::from("127.0.0.1"),
     };
 
@@ -54,4 +59,10 @@ fn main() {
         String::from("::1")
     );
 
+    // Example enum variants usage
+    let my_ip = IpAddr3::V4(192, 168, 1, 44);
+    let my_ip = IpAddr3::V6(String::from("fe80::44"));
+
+    more_enums::main();
+    option_enum::main();
 }
