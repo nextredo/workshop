@@ -22,3 +22,4 @@
   - But these are *variants* after all
   - So, code handling it should roughly act the same
     - Especially for things that apply to all IP addresses
+- See [the source](./enumprog/src/main.rs) for more
