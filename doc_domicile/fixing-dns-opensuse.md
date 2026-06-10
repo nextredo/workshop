@@ -1,4 +1,4 @@
-# Fixing DNS
+# Fixing DNS on OpenSUSE
 - Using Cloudflare Warp and Tailscale screws up the DNS sometimes
 - Commands to fix it are below
 
