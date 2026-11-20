@@ -13,7 +13,7 @@ TEMP_PDF='temp.pdf'
 pdftk "$1" multistamp "$2" output "$TEMP_PDF"
 
 # Rasterise
-gs -dNOPAUSE -dBATCH -sDEVICE=pdfimage24 -r200 -o "$3" "$TEMP_PDF"
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfimage24 -r250 -o "$3" "$TEMP_PDF"
 
 # Cleanup
 rm "$TEMP_PDF"
